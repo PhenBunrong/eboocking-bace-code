@@ -1,29 +1,36 @@
+import * as config from './config'
+
 export default {
-
-
-    // Global CSS: https://go.nuxtjs.dev/config-css
     css: [],
-
-    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
-
-    // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
-
-    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
-        // https://go.nuxtjs.dev/typescript
         '@nuxt/typescript-build',
-        // https://go.nuxtjs.dev/vuetify
+        '@nuxtjs/eslint-module',
         '@nuxtjs/vuetify',
+        '@nuxtjs/composition-api/module', [
+            'unplugin-auto-import/nuxt',
+            {
+                imports: [
+                    '@nuxtjs/composition-api',
+                    {
+                        '@vueuse/core': ['useVModel', 'useDebounceFn'],
+                        'vue-axios-http': ['sleep'],
+                    },
+                ],
+            },
+        ],
+        '@vueuse/nuxt'
     ],
 
-    // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
+        '@nuxtjs/i18n',
         '@nuxtjs/axios',
-        '@nuxtjs/auth-next'
+        '@nuxtjs/auth-next',
+        '@nuxtjs/universal-storage',
     ],
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
+    ...config,
+
     build: {}
 }

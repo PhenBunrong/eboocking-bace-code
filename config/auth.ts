@@ -5,7 +5,7 @@ export const auth: Partial<ModuleOptions> = {
     login: '/login',
     logout: '/login',
     callback: '/login',
-    home: '/bookings',
+    home: '/',
   },
   strategies: {
     local: {
@@ -29,9 +29,8 @@ export const auth: Partial<ModuleOptions> = {
       },
     },
   },
-  plugins: [
-    { src: '~/plugins/axios', ssr: true },
-    { src: '~/plugins/auth', ssr: true },
-    { src: '~/plugins/vue-gates', ssr: true },
-  ],
+  // plugins: [
+  //   { src: '~/plugins/axios', ssr: true },
+  //   { src: '~/plugins/auth', ssr: true },
+  // ],
 }
