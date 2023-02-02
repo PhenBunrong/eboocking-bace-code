@@ -1,13 +1,14 @@
 import * as config from './config'
 
 export default {
-    css: [],
+    css: ['~/assets/scss/app.scss'],
     plugins: [],
     components: true,
     buildModules: [
-        '@nuxt/typescript-build',
-        '@nuxtjs/eslint-module',
+        'nuxt-windicss',
         '@nuxtjs/vuetify',
+        '@nuxtjs/eslint-module',
+        '@nuxt/typescript-build',
         '@nuxtjs/composition-api/module', [
             'unplugin-auto-import/nuxt',
             {

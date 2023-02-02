@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <v-system-bar
+      v-if="isVerified"
       window
       fixed
       app

@@ -6,7 +6,7 @@
           <div class="mx-auto">
             <v-img contain height="52" class="mx-auto mb-4" :src="logo" alt="E-Booking" />
             <v-toolbar-title class="text-h4 font-weight-black">
-             Login
+             Login your account
             </v-toolbar-title>
             <v-card-text>Please enter your email and password correctly.</v-card-text>
           </div>
@@ -52,3 +52,14 @@
 </template>
 
 
+<script lang="ts" setup>
+const logo = require('static/v.png')
+</script>
+<script lang="ts">
+export default {
+  name: 'Login',
+  auth: 'guest',
+  layout: 'auth',
+  head: {},
+}
+</script>
