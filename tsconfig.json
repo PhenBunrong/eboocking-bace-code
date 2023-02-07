@@ -3,34 +3,44 @@
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM"
-    ],
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
+    "noUnusedLocals": true,
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"]
     },
+    "typeRoots": ["./node_modules/@types", "./@types"],
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@nuxtjs/i18n",
+      "@nuxtjs/dayjs",
+      "@nuxtjs/axios",
+      "vue-axios-http",
+      "@nuxtjs/vuetify",
+      "vuetify-dialogue",
+      "@nuxtjs/auth-next",
+      "@chantouchsek/validatorjs",
+      "collect.js",
+      "nuxt-windicss",
+      "vue-waiting",
+      "lru-cache",
+      "dayjs/plugin/relativeTime",
+      "dayjs/plugin/isSameOrBefore",
+      "dayjs/plugin/localizedFormat",
+      "@pinia/nuxt",
+      "@nuxtjs/universal-storage",
+      "nuxt-webpack-optimisations",
+      "vue-gates"
     ]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }

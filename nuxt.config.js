@@ -2,6 +2,8 @@ import * as config from './config'
 
 export default {
     css: ['~/assets/scss/app.scss'],
+    ssr: false,
+    target: 'static',
     plugins: [],
     components: true,
     buildModules: [
@@ -19,6 +21,7 @@ export default {
                         'vue-axios-http': ['sleep'],
                     },
                 ],
+                dirs: ['./composables/**', './dto/**', './domain/common'],
             },
         ],
         '@vueuse/nuxt'
@@ -26,8 +29,10 @@ export default {
 
     modules: [
         '@nuxtjs/i18n',
+        'vue-axios-http/nuxt',
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
+        '@nuxtjs/dayjs',
         '@nuxtjs/universal-storage',
     ],
 
